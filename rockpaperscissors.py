@@ -5,8 +5,9 @@ import sys
 cpuWins = 0
 humanWins = 0
 draws = 0
-
-print("Welcome to the game. \n")
+print("--------------------------------------------------------------")
+print("Welcome to rock, paper, scissors!")
+print("--------------------------------------------------------------")
 time.sleep(1.5)
 userName = input("What is your name? ")
 print("\n ")
@@ -29,7 +30,7 @@ def gamerGuess(gameResponse):
 
 def howToPlay():
     print("\n")
-    print("This is a simple but fun game \n")
+    print("Excellent! Let's get started \n")
     time.sleep(1.5)
     print("Make your choice", userName)
     print("\n")
@@ -38,13 +39,15 @@ def howToPlay():
 def startGame():
     scoreBoard()
     time.sleep(2)
-    userChoice = input("Rock, paper or scissors? ")
+    userChoice = input("Your turn. Rock, paper or scissors? ")
     testChoice(userChoice.lower())
     
 def testChoice(userChoice):    
     userChoice.lower()
     if userChoice == "rock" or userChoice == "paper" or userChoice == "scissors":
         print("\n")
+        print("ROCK, PAPER, SCISSORS, SHOOT!\n")
+        time.sleep(2)
         print("You have chosen", userChoice, "\n")
         computerChoice(userChoice)
     else:
@@ -114,12 +117,12 @@ def findWinner(choices):
         print("Something Went Wrong")
 
 def scoreBoard():
-    time.sleep(.5)
+    time.sleep(1)
     totalScore = cpuWins + humanWins + draws
     testCondition = totalScore / 5
     if totalScore == 0:
         pass
-    elif cpuWins - humanWins >= 2:
+    elif cpuWins - humanWins > 2:
         quitNow = input("I am beating you pretty badly. Ready to quit? yes/no ")
         quitNow.lower()
         if quitNow == "yes" or quitNow == "y":
@@ -141,7 +144,7 @@ def scoreBoard():
             print("\n")
             return
     elif humanWins - cpuWins >= 3:
-        print("You are beating me pretty badly ",userName, ". I quit")
+        print("You are beating me pretty badly ",userName,". I quit")
         sys.exit()
     elif testCondition%1==0:
         quitNow = input("Tired of playing yet? yes/no ")
@@ -153,18 +156,24 @@ def scoreBoard():
             print("\n")
             print("I knew you weren't a quitter", userName)
             print("\n")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print("Scoreboard:", userName, " ", humanWins, " Me ", cpuWins, " Draws ", draws)
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print("\n")
             return
         else:
             print("\n")
             print("I don't know what you are saying ", userName, " let's keep playing.")
             print("\n")
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print("Scoreboard:", userName, " ", humanWins, " Me ", cpuWins, " Draws ", draws)
+            print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
             print("\n")
             return
     else:
-        print("Scoreboard:", userName, " ", humanWins, " Computer ", cpuWins, " Draws ", draws)
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+        print("Scoreboard:", userName, " ", humanWins, " Me ", cpuWins, " Draws ", draws)
+        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
         print("\n")
         return
 
