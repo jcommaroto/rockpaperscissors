@@ -1,5 +1,5 @@
 # rockpaperscissors
-A simple rock paper scissors game written in Python.
+A simple rock, paper, scissors game written in Python.
 
 I mostly write code to process marketing and business data but I have little kids who are very interested in gaming. Since I never wrote a game before I thought it would be a fun exercise and something I could show them to spark their interest in computer programming.
 
